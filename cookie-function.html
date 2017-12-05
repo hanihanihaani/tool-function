@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>8.25.cookie-function.html</title>
+	<script>
+		function setCookie(key,value,iDate){
+			var oDate = new Date();
+			oDate.setDate(oDate.getDate() + iDate);
+			document.cookie = key + '=' + value+';expires ='+oDate;
+		}
+		
+
+		function getCookie(name){
+			var str = document.cookie;
+			var arr = str.split(';');
+			// console.log(arr);
+			var result = "";
+			for(var i=0;i<arr.length;i++){
+				var arr1 = arr[i].split('=');
+				// console.log(arr1);
+				if(arr1[0].trim() == name){
+					result = arr1[1];
+				}
+			}
+			return result;
+		}
+		function removeCookie(name){
+			setCookie(name,false,-2);
+		}
+		// console.log(getCookie('name'));
+		// console.log(getCookie('color'));
+		setCookie('x',1,2);
+		removeCookie('x');
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
