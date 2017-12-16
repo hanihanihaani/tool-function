@@ -4,3 +4,13 @@ function random (min,max) {
 }
 
 console.log(random (10,20));
+
+function randomStr(len) {
+  var str = "sfldsjfsjdfkdfjldkfjl";
+  var tmp = "";
+  for (var i=0;i<len;i++) {
+    var rand = Math.round(Math.random()*str.length);
+    tmp += str.charAt(rand)
+  }
+  return tmp;
+}
